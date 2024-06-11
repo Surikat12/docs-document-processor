@@ -26,6 +26,7 @@
         <open-api.version>1.7.0</open-api.version>
         <swagger-annotations.version>2.2.14</swagger-annotations.version>
         <swagger-maven-plugin.version>2.2.14</swagger-maven-plugin.version>
+        <commons-lang3.version>3.14.0</commons-lang3.version>
     </properties>
 
 </project>

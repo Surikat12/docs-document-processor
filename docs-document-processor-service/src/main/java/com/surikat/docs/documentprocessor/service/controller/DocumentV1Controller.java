@@ -1,6 +1,7 @@
 package com.surikat.docs.documentprocessor.service.controller;
 
 import com.surikat.docs.common.controller.AbstractApiController;
+import com.surikat.docs.common.exception.DocsServiceException;
 import com.surikat.docs.common.exception.StorageException;
 import com.surikat.docs.documentprocessor.common.model.DocumentType;
 import com.surikat.docs.documentprocessor.common.model.response.UploadDocumentResponse;
@@ -30,7 +31,7 @@ public class DocumentV1Controller extends AbstractApiController {
     @ResponseStatus(HttpStatus.CREATED)
     public UploadDocumentResponse uploadDocument(@RequestParam("name") String name,
                                                  @RequestParam("type") DocumentType type,
-                                                 @RequestParam("document") MultipartFile file) throws StorageException {
+                                                 @RequestParam("document") MultipartFile file) throws DocsServiceException {
         return documentsService.store(name, type, file);
     }
 }

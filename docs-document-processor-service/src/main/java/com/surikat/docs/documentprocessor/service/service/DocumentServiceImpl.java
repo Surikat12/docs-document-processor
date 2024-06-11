@@ -1,8 +1,10 @@
 package com.surikat.docs.documentprocessor.service.service;
 
-import com.surikat.docs.common.exception.StorageException;
+import com.surikat.docs.common.exception.BadArgumentException;
+import com.surikat.docs.common.exception.DocsServiceException;
 import com.surikat.docs.documentprocessor.common.model.DocumentType;
 import com.surikat.docs.documentprocessor.common.model.response.UploadDocumentResponse;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -20,7 +22,21 @@ public class DocumentServiceImpl implements DocumentService {
     }
 
     @Override
-    public UploadDocumentResponse store(String name, DocumentType type, MultipartFile multipartFile) throws StorageException {
+    public UploadDocumentResponse store(String name, DocumentType type, MultipartFile multipartFile) throws DocsServiceException {
+
+        if (StringUtils.isBlank(name)) {
+            throw new BadArgumentException("name must not be blank");
+        }
+        if (StringUtils.contains(name, '_')) {
+            throw new BadArgumentException("name must not contain '_'");
+        }
+        if (type == null) {
+            throw new BadArgumentException("type must not be null");
+        }
+        if (multipartFile == null) {
+            throw new BadArgumentException("document must not be null");
+        }
+
         UUID uuid = UUID.randomUUID();
         name = composeName(name, uuid, type);
         storageService.store(name, multipartFile);
