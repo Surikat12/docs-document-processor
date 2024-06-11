@@ -1,0 +1,14 @@
+spring.main.allow-bean-definition-overriding: true
+
+server:
+  port: 18210
+
+spring:
+  application:
+    name: docs-document-processor
+
+info:
+  app:
+    name: Сервис обработки документов
+    description: Сервис для сохранения документов в хранилище и их выдачи в нужном формате
+    version: "@project.version@"
