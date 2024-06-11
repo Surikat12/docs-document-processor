@@ -6,9 +6,23 @@ server:
 spring:
   application:
     name: docs-document-processor
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 128KB
+      max-request-size: 128KB
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
 
 info:
   app:
     name: Сервис обработки документов
     description: Сервис для сохранения документов в хранилище и их выдачи в нужном формате
     version: "@project.version@"
+
+file-system-storage:
+  location: local-storage
