@@ -6,33 +6,34 @@ import java.util.UUID;
 
 public class UploadDocumentResponse {
 
-    @JsonProperty("file_name")
-    private String fileName;
-    private UUID id;
+    @JsonProperty("document_id")
+    private UUID documentId;
+    @JsonProperty("document_name")
+    private String documentName;
 
-    public String getName() {
-        return fileName;
+    public String getDocumentName() {
+        return documentName;
     }
 
-    public UploadDocumentResponse withName(String fileName) {
-        this.fileName = fileName;
+    public UploadDocumentResponse withDocumentName(String documentName) {
+        this.documentName = documentName;
         return this;
     }
 
-    public UUID getId() {
-        return id;
+    public UUID getDocumentId() {
+        return documentId;
     }
 
-    public UploadDocumentResponse withProcessId(UUID processId) {
-        this.id = processId;
+    public UploadDocumentResponse withDocumentId(UUID documentId) {
+        this.documentId = documentId;
         return this;
     }
 
     @Override
     public String toString() {
         return "UploadDocumentResponse{" +
-                "fileName='" + fileName + '\'' +
-                ", id=" + id +
+                "fileName='" + documentName + '\'' +
+                ", id=" + documentId +
                 '}';
     }
 }

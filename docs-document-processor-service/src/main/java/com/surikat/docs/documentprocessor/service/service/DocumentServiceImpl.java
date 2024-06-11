@@ -24,7 +24,7 @@ public class DocumentServiceImpl implements DocumentService {
         UUID uuid = UUID.randomUUID();
         name = composeName(name, uuid, type);
         storageService.store(name, multipartFile);
-        return new UploadDocumentResponse().withName(name).withProcessId(uuid);
+        return new UploadDocumentResponse().withDocumentName(name).withDocumentId(uuid);
     }
 
     private String composeName(String name, UUID uuid, DocumentType type) {
