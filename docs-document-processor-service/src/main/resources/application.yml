@@ -23,3 +23,6 @@ info:
     name: Сервис обработки документов
     description: Сервис для сохранения документов в хранилище и их выдачи в нужном формате
     version: "@project.version@"
+
+file-system-storage:
+  location: local-storage
