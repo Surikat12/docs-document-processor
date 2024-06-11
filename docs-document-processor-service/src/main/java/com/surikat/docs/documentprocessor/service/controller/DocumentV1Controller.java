@@ -27,7 +27,7 @@ public class DocumentV1Controller extends AbstractApiController {
 
     @Operation(description = "Загрузить файл")
     @PostMapping(path = POST_DOCUMENT, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.CREATED)
     public UploadDocumentResponse uploadDocument(@RequestParam("name") String name,
                                                  @RequestParam("type") DocumentType type,
                                                  @RequestParam("document") MultipartFile file) throws StorageException {
