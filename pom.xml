@@ -22,9 +22,10 @@
     </parent>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <docs-common.version>0.0.1-SNAPSHOT</docs-common.version>
+        <open-api.version>1.7.0</open-api.version>
+        <swagger-annotations.version>2.2.14</swagger-annotations.version>
+        <swagger-maven-plugin.version>2.2.14</swagger-maven-plugin.version>
     </properties>
 
 </project>

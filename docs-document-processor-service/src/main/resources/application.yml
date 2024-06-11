@@ -6,6 +6,17 @@ server:
 spring:
   application:
     name: docs-document-processor
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 128KB
+      max-request-size: 128KB
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
 
 info:
   app:

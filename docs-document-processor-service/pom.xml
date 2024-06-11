@@ -21,6 +21,21 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.surikat.docs</groupId>
+            <artifactId>docs-document-processor-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.surikat</groupId>
+            <artifactId>notify-service-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.surikat.docs</groupId>
+            <artifactId>docs-common</artifactId>
+            <version>${docs-common.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web-services</artifactId>
         </dependency>
@@ -41,6 +56,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>${open-api.version}</version>
         </dependency>
     </dependencies>
 
